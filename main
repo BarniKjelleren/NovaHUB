@@ -1,0 +1,61 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Response = syn.request({
+    Url = "https://pastebin.com/raw/QuY87k8e",
+    Method = "GET"
+})
+
+local WindowMain = Rayfield:CreateWindow({
+    Name = "Nova Hub alpha",
+    LoadingTitle = "Nova Hub",
+    LoadingSubtitle = "by NovaXD",
+    ConfigurationSaving = {
+        Enabled = true,
+        FileName = "NovaHub alpha",
+    },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+        Title = "Nova Hub",
+        Subtitle = "Key System",
+        Note = "Join the discord (https://discord.gg/swvazRfNST)",
+        Key = Response.Body
+    }
+    })
+
+    local Tab = WindowMain:CreateTab("3rd party scripts")
+    local SectionFree = Tab:CreateSection("free")
+
+    local Button = Tab:CreateButton({
+        Name = "Hub 1",
+        Callback = function()
+            Rayfield:Notify("Hub 1 pressed","Hub 1 button was pressed by user",10010348543) -- (t,c,image)
+        end,
+    })
+
+    local Button = Tab:CreateButton({
+        Name = "Hub 3",
+        Callback = function()
+            Rayfield:Notify("Hub 3 pressed","Hub 3 button was pressed by user",10010348543) -- (t,c,image)
+        end,
+    })
+
+    local SectionPaid = Tab:CreateSection("Paid")
+    
+    local Button = Tab:CreateButton({
+        Name = "Hub 2",
+        Callback = function()
+            Rayfield:Notify("Hub 2 pressed","Hub 2 button was pressed by user",10010348543) -- (t,c,image)
+        end,
+    })
+
+    local Tab = WindowMain:CreateTab("settings")
+    local SectionFree = Tab:CreateSection("terminate")
+
+    local Button = Tab:CreateButton({
+        Name = "terminate UI",
+        Callback = function()
+            Rayfield:Destroy()
+        end,
+    })
+
+Rayfield:LoadConfiguration()
